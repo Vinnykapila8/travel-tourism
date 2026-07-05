@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Booking Form</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body {
+
+            min-height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            padding:170px 30px 30px;
+
+            background-image:url(images/photo.png);
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
+        }
+
+        /* NAVBAR */
+
+        nav{
+
+            position:absolute;
+            top:0;
+            left:0;
+
+            width:100%;
+            padding:35px 8%;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            background:rgba(0,0,0,0.25);
+            backdrop-filter:blur(6px);
+
+            z-index:1000;
+        }
+
+        nav ul{
+
+            display:flex;
+            gap:45px;
+
+            list-style:none;
+        }
+
+        nav ul li a{
+
+            text-decoration:none;
+            color:#ffb347;
+
+            font-size:22px;
+            font-weight:bold;
+
+            transition:0.3s;
+
+            text-shadow:4px 4px 30px #ffb347;
+        }
+
+        nav ul li a:hover{
+
+            color:#ffb347;
+        }
+
+        /* FORM */
+
+        .booking-form {
+
+            width:420px;
+            padding:35px;
+
+            background:rgba(0,0,0,0.60);
+            backdrop-filter:blur(8px);
+
+            border-radius:20px;
+            color:white;
+
+            box-shadow:0 0 20px rgba(0,0,0,0.4);
+        }
+
+        .booking-form h2 {
+
+            text-align:center;
+            margin-bottom:25px;
+
+            color:orange;
+            text-shadow:0px 0px 10px goldenrod;
+
+            font-size:32px;
+        }
+
+        .input-box {
+            margin-bottom:18px;
+        }
+
+        .input-box label {
+
+            display:block;
+            margin-bottom:8px;
+
+            color:yellow;
+            text-shadow:0px 0px 10px goldenrod;
+        }
+
+        .input-box input,
+        .input-box select,
+        .input-box textarea {
+
+            width:100%;
+            padding:12px;
+
+            border:none;
+            outline:none;
+
+            border-radius:10px;
+
+            background:rgba(255,255,255,0.15);
+            color:white;
+
+            font-size:15px;
+        }
+
+        .input-box input::placeholder,
+        .input-box textarea::placeholder {
+
+            color:#ddd;
+        }
+
+        .input-box select option {
+
+            color:black;
+        }
+
+        textarea {
+
+            resize:none;
+            height:90px;
+        }
+
+        .payment-box {
+
+            margin-bottom:20px;
+            color:white;
+        }
+
+        .payment-box label {
+
+            margin-right:15px;
+
+            color:yellow;
+            text-shadow:0px 0px 10px goldenrod;
+        }
+
+        /* BUTTON */
+
+        .btn {
+
+            width:100%;
+            padding:14px;
+
+            border:none;
+            border-radius:30px;
+
+            background:#ffb347;
+            color:black;
+
+            font-size:17px;
+            font-weight:bold;
+
+            cursor:pointer;
+            transition:0.4s;
+        }
+
+        .btn:hover {
+
+            background:white;
+            transform:scale(1.03);
+        }
+
+        /* HORSE ANIMATION */
+
+        .horse-container {
+
+            position:relative;
+            width:100%;
+            height:150px;
+            overflow:hidden;
+        }
+
+        .horse {
+
+            position:absolute;
+            top:10px;
+            left:-400px;
+
+            width:350px;
+
+            animation:gallop 4s linear infinite;
+        }
+
+        @keyframes gallop {
+
+            from {
+                left:-400px;
+            }
+
+            to {
+                left:100%;
+            }
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px){
+
+            nav ul{
+
+                flex-wrap:wrap;
+                justify-content:center;
+                gap:20px;
+            }
+
+            nav ul li a{
+
+                font-size:18px;
+            }
+
+            .booking-form{
+                width:100%;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="d.html">Destination</a></li>
+            <li><a href="1.html">Travel Guide</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="book.html">Booking</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- BOOKING FORM -->
+
+    <form class="booking-form" id="bookingForm">
+
+        <div class="horse-container">
+
+            <img src="images/Copilot_20260517_110521.png"
+            alt="Horse"
+            class="horse">
+
+        </div>
+
+        <h2>Book Your Tour</h2>
+
+        <div class="input-box">
+
+            <label>Full Name</label>
+
+            <input type="text"
+            id="name"
+            placeholder="Enter your name">
+
+        </div>
+
+        <div class="input-box">
+
+            <label>Email</label>
+
+            <input type="text"
+            id="email"
+            placeholder="Enter your email">
+
+        </div>
+
+        <div class="input-box">
+
+            <label>Phone Number</label>
+
+            <input type="text"
+            id="phone"
+            placeholder="Enter phone number">
+
+        </div>
+
+        <div class="input-box">
+
+            <label>Destination</label>
+
+            <select id="destination">
+
+                <option value="">Select Destination</option>
+
+                <option>Brazil</option>
+                <option>Canada</option>
+                <option>China</option>
+                <option>Colombia</option>
+                <option>Dubai</option>
+                <option>France</option>
+                <option>Germany</option>
+                <option>Greece</option>
+                <option>India</option>
+                <option>Italy</option>
+                <option>Japan</option>
+                <option>Malaysia</option>
+                <option>Nepal</option>
+                <option>Portugal</option>
+                <option>Spain</option>
+                <option>Switzerland</option>
+                <option>Thailand</option>
+                <option>Turkey</option>
+                <option>USA</option>
+                <option>Vietnam</option>
+
+            </select>
+
+        </div>
+
+        <div class="input-box">
+
+            <label>Number of Travelers</label>
+
+            <input type="number"
+            id="travelers"
+            placeholder="Enter number of travelers">
+
+        </div>
+
+        <div class="input-box">
+
+            <label>Travel Date</label>
+
+            <input type="date" id="date">
+
+        </div>
+
+        <div class="payment-box">
+
+            <label>Payment Method</label><br><br>
+
+            <input type="radio" name="payment" value="Credit Card"> Credit Card
+
+            <input type="radio" name="payment" value="UPI"> UPI
+
+            <input type="radio" name="payment" value="Cash"> Cash
+
+        </div>
+
+        <button type="submit" class="btn">
+            Book Now
+        </button>
+
+    </form>
+
+    <script>
+
+        let form = document.getElementById("bookingForm");
+
+        form.addEventListener("submit", function(event){
+
+            event.preventDefault();
+
+            let name =
+            document.getElementById("name").value.trim();
+
+            let email =
+            document.getElementById("email").value.trim();
+
+            let phone =
+            document.getElementById("phone").value.trim();
+
+            let destination =
+            document.getElementById("destination").value;
+
+            let travelers =
+            document.getElementById("travelers").value;
+
+            let date =
+            document.getElementById("date").value;
+
+            let payment =
+            document.querySelector('input[name="payment"]:checked');
+
+            // EMAIL VALIDATION
+
+            let emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // PHONE VALIDATION
+
+            let phonePattern =
+            /^[0-9]{10}$/;
+
+            // EMPTY FIELD CHECK
+
+            if(name==="" || email==="" || phone==="" ||
+            destination==="" || travelers==="" || date===""){
+
+                alert("Please fill all fields!");
+                return;
+            }
+
+            // EMAIL CHECK
+
+            if(!emailPattern.test(email)){
+
+                alert("Please enter a valid email address!");
+                return;
+            }
+
+            // PHONE CHECK
+
+            if(!phonePattern.test(phone)){
+
+                alert("Please enter a valid 10-digit phone number!");
+                return;
+            }
+
+            // TRAVELERS CHECK
+
+            if(travelers <= 0){
+
+                alert("Number of travelers must be at least 1!");
+                return;
+            }
+
+            // PAYMENT CHECK
+
+            if(payment === null){
+
+                alert("Please select a payment method!");
+                return;
+            }
+
+            // DATE VALIDATION
+
+            let today = new Date();
+
+            today.setHours(0,0,0,0);
+
+            let selectedDate = new Date(date);
+
+            if(selectedDate < today){
+
+                alert("Travel date cannot be in the past!");
+                return;
+            }
+
+            // SUCCESS
+
+            alert("Booking request submitted successfully!");
+
+            form.reset();
+
+        });
+
+    </script>
+
+</body>
+</html>

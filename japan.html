@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>japan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        h4 {
+            color: white;
+            font-size: x-large;
+            text-shadow: -2px -6px 4px goldenrod;
+        }
+
+        .vertical-title-left {
+            position: fixed;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            font-size: 90px;
+            color: white;
+            letter-spacing: 9px;
+            text-shadow: 2px 4px 10px goldenrod;
+        }
+
+        .vertical-title-right {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            font-size: 90px;
+            color: aliceblue;
+            letter-spacing: 9px;
+            text-shadow: 2px 4px 10px goldenrod;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .col-4 {
+            margin: 10px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px white;
+        }
+
+        .col-4 img {
+            width: 250px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 3px solid goldenrod;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .col-4:hover img {
+            transform: scale(1.1);
+            filter: brightness(50%);
+        }
+
+        .info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            font-size: 14px;
+            transform: translateY(20px);
+        }
+
+        .col-4:hover .info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .row.left .col-4 {
+            opacity: 0;
+            transform: translateX(-100%);
+            animation: slideInLeft 1s forwards;
+        }
+
+        .row.right .col-4 {
+            opacity: 0;
+            transform: translateX(100%);
+            animation: slideInRight 1s forwards;
+        }
+
+        .col-4:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .col-4:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .col-4:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .col-4:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 class="vertical-title-left">JAPAN</h2>
+    <h2 class="vertical-title-right">JAPAN</h2>
+
+    <!-- First row -->
+    <div class="row left">
+        <div class="col-4">
+            <img src="images/tokyo.jpeg" alt="Tokyo">
+            <h4>Tokyo</h4>
+            <p class="info">Tokyo is Japan’s bustling capital, known for its skyscrapers, technology, and traditional
+                temples like Senso-ji.</p>
+        </div>
+        <div class="col-4">
+            <img src="images/kyoto.webp" alt="Kyoto">
+            <h4>Kyoto</h4>
+            <p class="info">Kyoto is famous for its historic shrines, geisha districts, and stunning cherry blossoms in
+                spring.</p>
+        </div>
+        <div class="col-4">
+            <img src="images/osaka.jpg" alt="Osaka">
+            <h4>Osaka</h4>
+            <p class="info">Osaka is known for its vibrant street food, Osaka Castle, and lively entertainment
+                districts.</p>
+        </div>
+        <div class="col-4">
+            <img src="images/nara.webp" alt="Nara">
+            <h4>Nara</h4>
+            <p class="info">Nara is home to friendly free-roaming deer and the Great Buddha statue at Todai-ji Temple.
+            </p>
+        </div>
+    </div>
+
+    <!-- Second row -->
+    <div class="row right">
+        <div class="col-4">
+            <img src="images/hiroshima.jpg" alt="Hiroshima">
+            <h4>Hiroshima</h4>
+            <p class="info">Hiroshima is remembered for the Peace Memorial Park and its message of resilience and hope.
+            </p>
+        </div>
+        <div class="col-4">
+            <img src="images/sapporo.jpg" alt="Sapporo">
+            <h4>Sapporo</h4>
+            <p class="info">Sapporo is famous for its snow festival, ski resorts, and delicious miso ramen.</p>
+        </div>
+        <div class="col-4">
+            <img src="images/fukuoka.jpg" alt="Fukuoka">
+            <h4>Fukuoka</h4>
+            <p class="info">Fukuoka is a coastal city known for its ancient temples, shopping, and Hakata ramen.</p>
+        </div>
+        <div class="col-4">
+            <img src="images/mountfuji.jpg" alt="Mount Fuji">
+            <h4>Mount Fuji</h4>
+            <p class="info">Mount Fuji is Japan’s iconic volcano, a UNESCO site, and a popular destination for climbers
+                and photographers.</p>
+        </div>
+    </div>
+
+
+    <div style="text-align:center; margin:30px;">
+        <button onclick="goBack()"
+            style="padding:10px 20px; font-size:18px; background-color:goldenrod; color:white; border:none; border-radius:6px; cursor:pointer; box-shadow:2px 4px 8px white;">
+            ⬅ Back
+        </button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back(); // goes to the previous page
+        }
+
+    </script>
+
+</body>
+
+</html>

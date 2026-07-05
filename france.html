@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>France</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        h4 {
+            color: white;
+            font-size: x-large;
+            text-shadow: -2px -6px 4px goldenrod;
+        }
+
+        .vertical-title-left {
+            position: fixed;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            font-size: 90px;
+            color: white;
+            letter-spacing: 9px;
+            text-shadow: 2px 4px 10px goldenrod;
+        }
+
+        .vertical-title-right {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            font-size: 90px;
+            color: aliceblue;
+            letter-spacing: 9px;
+            text-shadow: 2px 4px 10px goldenrod;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .col-4 {
+            margin: 10px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px white;
+        }
+
+        .col-4 img {
+            width: 250px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 3px solid goldenrod;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .col-4:hover img {
+            transform: scale(1.1);
+            filter: brightness(50%);
+        }
+
+        .info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            font-size: 14px;
+            transform: translateY(20px);
+        }
+
+        .col-4:hover .info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .row.left .col-4 {
+            opacity: 0;
+            transform: translateX(-100%);
+            animation: slideInLeft 1s forwards;
+        }
+
+        .row.right .col-4 {
+            opacity: 0;
+            transform: translateX(100%);
+            animation: slideInRight 1s forwards;
+        }
+
+        .col-4:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .col-4:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .col-4:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .col-4:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 class="vertical-title-left">FRANCE</h2>
+    <h2 class="vertical-title-right">FRANCE</h2>
+
+    <!-- First row -->
+    <div class="row left">
+        <div class="col-4">
+            <img src="images/PARIS.jpeg" alt="Paris">
+            <h4>Paris</h4>
+            <p class="info">Paris is the capital of France, known for the Eiffel Tower, Louvre Museum, and its romantic
+                atmosphere.</p>
+        </div>
+        <div class="col-4">
+            <img src="images/nice.webp" alt="Nice">
+            <h4>Nice</h4>
+            <p class="info">Nice is a coastal city on the French Riviera, famous for its beaches, Promenade des Anglais,
+                and Mediterranean charm.</p>
+        </div>
+        <div class="col-4">
+            <img src="images/lyon.jpg" alt="Lyon">
+            <h4>Lyon</h4>
+            <p class="info">Lyon is renowned for its gastronomy, Renaissance architecture, and role as a UNESCO World
+                Heritage site.</p>
+        </div>
+        <div class="col-4">
+            <img src="images/marseille.jpg" alt="Marseille">
+            <h4>Marseille</h4>
+            <p class="info">Marseille is France’s oldest city, known for its port, multicultural vibe, and landmarks
+                like Notre-Dame de la Garde.</p>
+        </div>
+    </div>
+
+    <!-- Second row -->
+    <div class="row right">
+        <div class="col-4">
+            <img src="images/bordeaux.jpeg" alt="Bordeaux">
+            <h4>Bordeaux</h4>
+            <p class="info">Bordeaux is world-famous for its wine, elegant architecture, and historic city center.</p>
+        </div>
+        <div class="col-4">
+            <img src="images/strasbourg.jpg" alt="Strasbourg">
+            <h4>Strasbourg</h4>
+            <p class="info">Strasbourg is known for its medieval old town, Gothic cathedral, and as the seat of the
+                European Parliament.</p>
+        </div>
+        <div class="col-4">
+            <img src="images/montsaintmichel.jpg" alt="Mont Saint-Michel">
+            <h4>Mont Saint-Michel</h4>
+            <p class="info">Mont Saint-Michel is a stunning island commune with a medieval abbey rising dramatically
+                from the sea.</p>
+        </div>
+        <div class="col-4">
+            <img src="images/lille.jpg" alt="Lille">
+            <h4>Lille</h4>
+            <p class="info">Lille is a vibrant northern city, known for its Flemish architecture, lively markets, and
+                cultural festivals.</p>
+        </div>
+    </div>
+
+    <div style="text-align:center; margin:30px;">
+        <button onclick="goBack()"
+            style="padding:10px 20px; font-size:18px; background-color:goldenrod; color:white; border:none; border-radius:6px; cursor:pointer; box-shadow:2px 4px 8px white;">
+            ⬅ Back
+        </button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back(); // goes to the previous page
+        }
+
+    </script>
+
+</body>
+
+</html>

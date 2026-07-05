@@ -1,0 +1,546 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Airplane</title>
+  <style>
+body {
+  background: url("images/sun.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+}
+
+    .airplane {
+      position: fixed;
+      bottom: 0px;
+      left: 0px;
+      width: 450px;      animation: flyUpRight 7s ease-in-out infinite;
+    }
+
+    @keyframes flyUpRight {
+      0% {
+        transform: translate(0, 0);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translate(80vw, -80vh);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="images/Copilot_20260517_222516.png" alt="Airplane" class="airplane">
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Website</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background-image: url(images/ip.jpg);
+    overflow-x:hidden;
+}
+/* NAVBAR */
+
+nav{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:28px 8%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,0.25);
+
+    backdrop-filter:blur(8px);
+
+    z-index:1000;
+}
+
+nav ul{
+
+    display:flex;
+    gap:45px;
+
+    list-style:none;
+}
+
+nav ul li a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:22px;
+    font-weight:600;
+
+    transition:0.4s;
+
+    text-shadow:
+    0 0 10px black,
+    0 0 20px rgba(0,0,0,0.5);
+}
+
+nav ul li a:hover{
+
+    color:#ffb347;
+
+    text-shadow:
+    0 0 10px #ffb347,
+    0 0 20px orange;
+}
+/* HERO SECTION */
+
+.hero{
+
+    width:100%;
+    height:100vh;
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+    url("images/sun.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    color:white;
+    padding:20px;
+}
+
+.hero-content{
+    z-index:2;
+}
+
+.hero-content h1{
+    font-size:80px;
+    margin-bottom:20px;
+}
+
+.hero-content h1 span{
+    color:#ffb347;
+}
+
+.hero-content p{
+    font-size:20px;
+    width:70%;
+    margin:auto;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+/* BUTTON */
+
+.btn{
+
+    padding:15px 35px;
+
+    border:none;
+    border-radius:40px;
+
+    background:#ffb347;
+    color:black;
+
+    font-size:17px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.btn:hover{
+    background:white;
+    transform:translateY(-5px);
+}
+
+/* AIRPLANE */
+
+.airplane {
+
+    position:absolute;
+    bottom:0px;
+    left:-300px;
+
+    width:450px;
+
+    animation:flyUpRight 7s linear infinite;
+}
+
+@keyframes flyUpRight {
+
+    0% {
+        transform: translate(0, 0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100% {
+        transform: translate(120vw, -100vh);
+        opacity:1;
+    }
+}
+
+/* REVIEWS */
+
+.review-section{
+/* background-image: url(images/bb.webp); */
+    width:90%;
+    margin:80px auto;
+    text-align:center;
+}
+
+.review-section h2{
+
+    color:rgba(245, 222, 179, 0.859);
+    font-size:55px;
+    margin-bottom:50px;
+ text-shadow:
+    0px 0px 10px black,
+    0px 0px 20px #ff7e5f,
+    0px 0px 30px bisque;
+
+}
+
+.review-container{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.review-box{
+    background:#1b1b1b;
+    padding:30px;
+    border-radius:20px;
+border: 3px solid rgba(218, 165, 32, 0.579);
+    transition:0.4s;
+}
+
+.review-box:hover{
+    transform:translateY(-10px);
+}
+
+.review-box h3{
+    color:white;
+    margin-bottom:10px;
+}
+
+.review-box p{
+    color:#bbb;
+    line-height:1.7;
+}
+
+.stars{
+    color:#ffb347;
+    margin-bottom:15px;
+    font-size:20px;
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+
+    width:90%;
+    margin:100px auto;
+
+    background:#1b1b1b;
+    border-radius:25px;
+
+    padding:60px 30px;
+    text-align:center;
+}
+
+.newsletter h2{
+
+    color:white;
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.newsletter p{
+
+    color:#bbb;
+    width:70%;
+    margin:auto;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.subscribe-box{
+
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.subscribe-box input{
+
+    width:350px;
+    padding:15px;
+
+    border:none;
+    outline:none;
+
+    border-radius:40px;
+    font-size:16px;
+}
+
+.subscribe-box button{
+
+    padding:15px 30px;
+
+    border:none;
+    border-radius:40px;
+
+    background:#ffb347;
+    color:black;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.subscribe-box button:hover{
+    background:white;
+}
+
+.small-text{
+    color:#888;
+    margin-top:20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .hero-content h1{
+        font-size:50px;
+    }
+
+    .hero-content p{
+        width:100%;
+        font-size:17px;
+    }
+
+    .newsletter p{
+        width:100%;
+    }
+
+    .airplane{
+        width:250px;
+    }
+
+}
+@media(max-width:900px){
+
+    nav ul{
+
+        gap:20px;
+
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav ul li a{
+
+        font-size:16px;
+    }
+ .hero-content h1{
+
+        font-size:50px;
+    }
+
+    .hero-content p{
+
+        width:100%;
+        font-size:17px;
+    }
+
+    .newsletter p{
+
+        width:100%;
+    }
+
+    .airplane{
+
+        width:250px;
+    }
+
+    .review-section h2{
+
+        font-size:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+
+<nav>
+
+    <ul>
+
+        <li><a href="home.html">Home</a></li>
+
+        <li><a href="d.html">Destination</a></li>
+
+        <li><a href="1.html">Travel Guide</a></li>
+
+        <li><a href="gallery.html">Gallery</a></li>
+
+        <li><a href="book.html">Booking</a></li>
+
+        <li><a href="contactus.html">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <!-- AIRPLANE -->
+
+    <img src="images/Copilot_20260517_222516.png"
+    alt="Airplane"
+    class="airplane">
+
+    <div class="hero-content">
+
+        <h1>Explore The <span>World</span></h1>
+
+        <p>
+            Discover breathtaking destinations, luxury vacations,
+            and unforgettable adventures with us.
+        </p>
+
+    <a href="book.html">
+    <button class="btn">Start Your Journey</button>
+</a>
+
+    </div>
+
+</section>
+
+<!-- REVIEWS -->
+
+<section class="review-section">
+
+    <h2>Traveler Reviews</h2>
+
+    <div class="review-container">
+
+        <div class="review-box">
+            <div class="stars">★★★★★</div>
+            <h3>Emma Watson</h3>
+            <p>
+                Amazing experience! The tour was perfectly organized
+                and the destinations were breathtaking.
+            </p>
+
+        </div>
+
+        <div class="review-box">
+            <div class="stars">★★★★★</div>
+            <h3>John Miller</h3>
+            <p>
+                Best travel service ever. Hotels, transport,
+                and guides were all excellent.
+            </p>
+        </div>
+
+        <div class="review-box">
+            <div class="stars">★★★★★</div>
+            <h3>Sophia Lee</h3>
+            <p>
+                I loved every moment of the trip.
+                Highly recommended for adventure lovers!
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+
+    <h2>Get inspired, every week</h2>
+
+    <p>
+        Travel guides, hidden gems, and exclusive deals —
+        delivered to your inbox. No spam, ever.
+    </p>
+
+    <div class="subscribe-box">
+
+        <input type="email" placeholder="Your email address">
+
+        <button onclick="subscribe()">Subscribe</button>
+
+    </div>
+
+    <div class="small-text">
+        Join 50,000+ travelers. Unsubscribe anytime.
+    </div>
+
+</section>
+
+<script>
+
+function subscribe(){
+
+    alert("Thank you for subscribing!");
+
+}
+
+</script>
+
+</body>
+</html>
+
